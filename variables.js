@@ -1,3 +1,5 @@
+// Variables can be declared with var, let, or const
+// Functions can be defined or expressed
 var number = 5;
 console.log(number);
 
