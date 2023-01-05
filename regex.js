@@ -1,6 +1,8 @@
 // Regular Expressions are patterns used to match character combinations in strings
 
 // Function disemvowel is a function that removes vowels from a input string 
+// Regular Expression String Methods like search() and replace() use a pattern to search for or replace parts of strings
+// Regular Expression patterns can be followed by a flag or flags to modify the expression. i is for case insensitive, g is for a global match, which means all occurrences 
 function disemvowel(string) {
     // ADD CODE HERE
     string = string.replace(/a/ig, "");
