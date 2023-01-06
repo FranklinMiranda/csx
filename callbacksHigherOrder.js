@@ -69,3 +69,29 @@ const over100 = (n) => n > 100;
 const intSqRtOrOver100 = eitherCallback(intergerSquareRoot, over100);
 // The assigned anonymous function to intSqRtOrOver100 can now access the parameters passed into the callback inside filterArray
 console.log(filterArray(arrOfNum, intSqRtOrOver100));
+
+// Reduce Function
+function intersection(arr) {
+  let newArr = arr.pop();
+  let resultArr = [];
+
+  newArr.forEach((el) => {
+    const included = arr.reduce((total, item) => {
+      if (item.includes(el)) {
+        total++;
+      }
+      return total;
+    }, 0);
+    if (included === arr.length) {
+      resultArr.push(el);
+    }
+  });
+
+  return resultArr;
+}
+
+// Uncomment these to check your work!
+const arr1 = [5, 10, 15, 20];
+const arr2 = [15, 88, 1, 5, 7];
+const arr3 = [1, 10, 15, 5, 20];
+console.log(intersection([arr1, arr2, arr3])); // should log: [5, 15]
