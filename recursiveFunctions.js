@@ -71,3 +71,36 @@ function modulo4(num) { return num % 4; }
 function subtract10(num) { return num - 10; }
 const arrayOfFunctions = [multiplyBy2, add7, modulo4, subtract10];
 console.log(flow(2, arrayOfFunctions)); // -> -7
+
+
+// Recursive Function Card Shuffle 
+function shuffleCards(topHalf, bottomHalf) {
+    // YOUR CODE HERE
+    const result = [];
+    function recurse (counter = 0) {
+      if (!topHalf[counter]) {
+        result.push(...bottomHalf.slice(counter))
+          return
+      }
+      if (!bottomHalf[counter]) {
+        result.push(...topHalf.slice(counter))
+      return 
+      }
+      result.push(topHalf[counter], bottomHalf[counter])
+      return recurse (counter += 1)
+    }
+    recurse()
+    return result
+  }
+  // UNCOMMENT TO TEST YOUR WORK
+  const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+  const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
+  console.log(shuffleCards(topHalf, bottomHalf));
+    /*-> ['Queen of Diamonds',
+          'Jack of Hearts',
+          'Five of Hearts',
+          'Ten of Spades',
+          'Ace of Spades',
+          'Eight of Clubs',
+        ]
+    */
